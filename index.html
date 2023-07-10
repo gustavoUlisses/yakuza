@@ -1,28 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Calculadora de Porcentagem</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>YakuzaFin</title>
 </head>
 
 <body>
+    <div class="container">
+        <img src="logo.png" alt="Logo">
+        <form id="calc-form">
+            <div class="input-group">
 
-  <div class="container">
-    <img src="logo.png" alt="Logo Yakuza">
-    <div class="form">
-      <label for="percentage">Porcentagem %</label>
-      <input type="number" id="percentage" max="30" min="0">
-      <label for="number">Quantia $</label>
-      <input type="number" id="number">
-      <button id="calculate">Calcular</button>
+                <input type="text" id="percentage-input" placeholder="Porcentagem %" />
+            </div>
+            <div class="input-group">
+
+                <input type="text" id="value-input" placeholder="Quantia $" />
+            </div>
+            <button type="button" id="calculate-btn">Calcular</button>
+        </form>
+        <div id="result-container">
+            <p>Lucro: <span id="profit-result"></span></p>
+            <p>Devolver Limpo: <span id="client-result"></span></p>
+        </div>
     </div>
-    <div id="result"></div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
