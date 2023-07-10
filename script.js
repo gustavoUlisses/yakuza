@@ -1,17 +1,16 @@
-const calculateButton = document.getElementById('calculate');
-const resultElement = document.getElementById('result');
+document.getElementById("calculate-btn").addEventListener("click", function () {
+  var percentage = parseFloat(
+    document.getElementById("percentage-input").value
+  );
+  var value = parseFloat(document.getElementById("value-input").value);
 
-calculateButton.addEventListener('click', () => {
-  const percentageInput = document.getElementById('percentage');
-  const numberInput = document.getElementById('number');
-  
-  const percentage = parseFloat(percentageInput.value);
-  const number = parseFloat(numberInput.value);
-  
-  if (isNaN(percentage) || isNaN(number)) {
-    resultElement.textContent = 'Digite um valor válido.';
-  } else {
-    const result = (percentage / 100) * number;
-    resultElement.textContent = `Resultado: ${result}`;
+  if (!isNaN(percentage) && !isNaN(value)) {
+    var profit = (percentage / 100) * value;
+    var clientValue = value - profit;
+
+    document.getElementById("profit-result").innerText =
+      profit.toLocaleString();
+    document.getElementById("client-result").innerText =
+      clientValue.toLocaleString();
   }
 });
